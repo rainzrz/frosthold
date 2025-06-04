@@ -1,69 +1,63 @@
-cat > README.txt << 'EOF'
-Frosthold - Servidor Minecraft com Docker
+# Frosthold - Servidor Minecraft com Docker
 
-Este projeto contém a configuração para rodar um servidor Minecraft dentro de um container Docker, facilitando o gerenciamento e deploy do servidor.
-
----
-
-Estrutura do projeto:
-
-- docker-compose.yml — Configuração do Docker Compose para iniciar o servidor Minecraft.
-- start.sh — Script para iniciar o servidor.
-- restart.sh — Script para reiniciar o servidor.
-- backup.sh — Script para criar backups automáticos.
-- backups/ — Pasta onde os backups do servidor são armazenados.
-- logs/ — Logs do servidor.
-- data/ — Arquivos de dados do servidor Minecraft (mundo, configurações, whitelist, etc).
+Projeto para facilitar a criação e gerenciamento de um servidor Minecraft dentro de um container Docker, com scripts para iniciar, reiniciar e fazer backups automáticos do servidor.
 
 ---
 
-Requisitos:
+## Estrutura do Projeto
 
-- Docker e Docker Compose instalados na máquina.
-- Máquina virtual Ubuntu 22 (opcional, pode ser rodado direto no host).
-- Radmin VPN (opcional, para conexão VPN com jogadores).
-- Acesso SSH para gerenciar o servidor remotamente (opcional).
+- `docker-compose.yml` — Configuração do Docker Compose para subir o servidor Minecraft.  
+- `start.sh` — Script para iniciar o servidor.  
+- `restart.sh` — Script para reiniciar o servidor.  
+- `backup.sh` — Script para criar backups automáticos.  
+- `backups/` — Diretório onde os backups são armazenados.  
+- `logs/` — Logs do servidor.  
+- `data/` — Arquivos de dados do servidor Minecraft (mundo, configurações, whitelist, etc).
 
 ---
 
-Como usar:
+## Requisitos
 
-Inicializar o servidor:
+- Docker e Docker Compose instalados na máquina.  
+- Ubuntu 22 (ou outra distro Linux) — opcional, pode rodar direto no host.  
+- Radmin VPN — opcional, para conexão VPN entre jogadores.  
+- Acesso SSH para gerenciamento remoto — opcional.
+
+---
+
+## Como usar
+
+```bash
+# Iniciar o servidor
 ./start.sh
 
-Reiniciar o servidor:
+# Reiniciar o servidor
 ./restart.sh
 
-Criar backup manual:
+# Criar backup manual
 ./backup.sh
 
----
+# Como conectar no servidor Minecraft
+Use o IP público da máquina onde o servidor está rodando.
 
-Conectando no servidor Minecraft:
+Se usar VPN (exemplo: Radmin VPN), use o IP virtual da VPN para conectar.
 
-- Use o IP público da máquina onde o servidor está rodando.
-- Caso use VPN (ex: Radmin VPN), use o IP virtual da VPN para conectar.
+# Observações
+Os arquivos .jar, pastas backups/ e logs/ são ignorados no Git.
 
----
+Os arquivos whitelist.json e server.properties dentro da pasta data/ são versionados para manter configurações sincronizadas.
 
-Observações:
+# Como contribuir
+Contribuições são bem-vindas! Abra issues ou envie pull requests para melhorias.
 
-- Arquivos .jar, pastas backups e logs são ignorados no Git.
-- Os arquivos whitelist.json e server.properties dentro da pasta data são versionados para manter as configurações e permissões sincronizadas.
-
----
-
-Como contribuir:
-
-Sinta-se livre para abrir issues ou enviar pull requests com melhorias.
-
----
-
-Licença:
-
-MIT License
-
----
+# Licença
+Este projeto está sob a licença MIT.
 
 Feito por rainzrz
-EOF
+
+
+
+
+
+
+
